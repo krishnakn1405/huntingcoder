@@ -1,0 +1,20 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+  }
+
+  .container{
+    padding: 0 22rem;
+  }
+
+  .p{
+    margin-top: 2vw;
+  }
+
+  .hr{
+    margin: 2.5vw 0 2vw 0;
+  }
