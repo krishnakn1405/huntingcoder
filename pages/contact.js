@@ -59,25 +59,25 @@ const Contact = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Contact Us</h1>
+      <h1 className={styles.h1}>Contact Us</h1>
       <form onSubmit={handleSubmit}>
         <div className={styles.mb3}>
           <label htmlFor="name" className={styles.formLabel}>Enter your name</label>
-          <input type="text" value={name} onChange={handleChange} className="form-control" id="name" name="name" />
+          <input type="text" value={name} onChange={handleChange} className={styles.formControl} id="name" name="name" />
         </div>
         <div className={styles.mb3}>
           <label htmlFor="email" className={styles.formLabel}>Email address</label>
-          <input type="email" value={email} onChange={handleChange} className="form-control" id="email" name="email" />
+          <input type="email" value={email} onChange={handleChange} className={styles.formControl} id="email" name="email" />
         </div>
         <div className={styles.mb3}>
           <label htmlFor="phone" className={styles.formLabel}>Phone</label>
-          <input type="phone" value={phone} onChange={handleChange} className="form-control" id="phone" name="phone" />
+          <input type="phone" value={phone} onChange={handleChange} className={styles.formControl} id="phone" name="phone" />
         </div>
         <div className={styles.mb3}>
           <label htmlFor="desc" className={styles.formLabel}>Elaborate your concern</label>
-          <textarea className="form-control" value={desc} onChange={handleChange} id="desc" name="desc" placeholder="Write your concern here" rows="3" />
+          <textarea className={styles.formControl} value={desc} onChange={handleChange} id="desc" name="desc" placeholder="Write your concern here" rows="3" />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className={styles.btn}>Submit</button>
       </form>
     </div>
   )
