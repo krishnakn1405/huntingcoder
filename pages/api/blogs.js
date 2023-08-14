@@ -3,7 +3,13 @@
 import * as fs from "node:fs";
 
 export default async function handler(req, res) {
+
   let data = await fs.promises.readdir("blogdata");
+
+  let allCount = data.length;
+
+  data = data.slice(0, parseInt(req.query.count));
+
   let myfile;
   let allBlogs = [];
 
@@ -13,5 +19,10 @@ export default async function handler(req, res) {
     allBlogs.push(JSON.parse(myfile));
   }
 
-  res.status(200).json(allBlogs);
+  let sendData = {
+    "allCount": allCount,
+    "allBlogs": allBlogs
+  }
+
+  res.status(200).json(sendData);
 }

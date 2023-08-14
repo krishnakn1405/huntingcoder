@@ -1,20 +1,37 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 0 22rem;
+}
+
+.p {
+  margin-top: 2vw;
+}
+
+.hr {
+  margin: 2.5vw 0 2vw 0;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .container {
+    padding: 0 2rem;
   }
 
-  .container{
-    padding: 0 22rem;
+  .p {
+    margin-top: 4vw;
   }
 
-  .p{
-    margin-top: 2vw;
+  .hr {
+    margin: 4.5vw 0 3vw 0;
   }
 
-  .hr{
-    margin: 2.5vw 0 2vw 0;
-  }
+}

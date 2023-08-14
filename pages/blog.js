@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/Blog.module.css";
 import Link from "next/link";
+import InfiniteScroll from "react-infinite-scroll-component";
+
 
 // Step 1: Collect all the files from blogdata directory
 // Step 2: Iterate through and display them
 
 const Blog = (props) => {
-  console.log(props);
   const [blogs, setBlogs] = useState(props.allBlogs);
+  const [counts, setCounts] = useState(props.allCount);
 
-  // useEffect(() => {
+  const [count, setCount] = useState(2);
 
-  // }, [])
+  const fetchData = async () => {
+    let d = await fetch(`http://localhost:3000/api/blogs/?count=${count + 2}`);
+    setCount(count + 2);
+    let data = await d.json();
+    data = data.allBlogs;
+    setBlogs(data)
+  };
+
   return (
     <>
       <style jsx>
@@ -23,7 +32,18 @@ const Blog = (props) => {
         `}
       </style>
       <main className={`${styles.main}`}>
-        <div>
+
+        <InfiniteScroll
+          dataLength={blogs.length}
+          next={fetchData}
+          hasMore={counts !== blogs.length}
+          loader={<h4>Loading...</h4>}
+          endMessage={
+            <p style={{ textAlign: 'center' }}>
+              <b>Yay! You have seen it all</b>
+            </p>
+          }
+        >
           {blogs.map((blogItem) => {
             return (
               <div key={blogItem.slug} className={styles.blogItem}>
@@ -36,6 +56,10 @@ const Blog = (props) => {
               </div>
             );
           })}
+        </InfiniteScroll>
+
+        <div>
+
         </div>
       </main>
     </>
@@ -43,11 +67,14 @@ const Blog = (props) => {
 };
 
 export async function getServerSideProps(context) {
-  let data = await fetch("http://localhost:3000/api/blogs");
-  let allBlogs = await data.json();
+  let data = await fetch("http://localhost:3000/api/blogs?count=6");
+  let sendData = await data.json();
+
+  let allCount = sendData.allCount;
+  let allBlogs = sendData.allBlogs;
 
   return {
-    props: { allBlogs },
+    props: { allCount: allCount, allBlogs: allBlogs },
   };
 }
 

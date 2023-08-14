@@ -1,17 +1,25 @@
-.container{
+.container {
     margin: 48px auto;
     max-width: 45vw;
 }
 
-.center{
+.center {
     text-align: center;
 }
 
-.h2{
+.h2 {
     margin-top: 20px;
     margin-bottom: 8px;
 }
 
-.ul{
+.ul {
     margin: 15px 0 10px 25px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        margin: 40px auto;
+        max-width: 90vw;
+    }
 }

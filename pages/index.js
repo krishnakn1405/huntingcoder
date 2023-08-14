@@ -17,7 +17,7 @@ export default function Home() {
 
       <main className={`${styles.main} ${inter.className}`}>
 
-        
+
 
         <div className={styles.imagewrap}>
           <Image className={styles.myImg} src="/home.jpg" alt="home img" width={237} height={158} />

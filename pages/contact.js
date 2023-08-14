@@ -7,7 +7,7 @@ const Contact = () => {
   const [phone, setphone] = useState('');
   const [desc, setdesc] = useState('');
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     // console.log(phone, name, email, desc);
@@ -21,36 +21,37 @@ const Contact = () => {
           },
           body: JSON.stringify(data),
         });
-    
+
         const result = await response.json();
-        console.log("Success:", result);
+        // console.log("Success:", result);
         alert("Thanks for contacting us");
         setphone('');
         setname('');
         setemail('');
         setdesc('');
       } catch (error) {
-        console.error("Error:", error);
+        // console.error("Error:", error);
       }
     }
-    
+
     const data = { phone, name, email, desc };
     postJSON(data);
 
   }
-  
-  const handleChange = (e)=>{
-  
-    if(e.target.name == 'phone'){
+
+
+  const handleChange = (e) => {
+
+    if (e.target.name == 'phone') {
       setphone(e.target.value);
     }
-    else if(e.target.name == 'email'){
+    else if (e.target.name == 'email') {
       setemail(e.target.value);
-    } 
-    else if(e.target.name == 'desc'){
+    }
+    else if (e.target.name == 'desc') {
       setdesc(e.target.value);
     }
-    else if(e.target.name == 'name'){
+    else if (e.target.name == 'name') {
       setname(e.target.value);
     }
 

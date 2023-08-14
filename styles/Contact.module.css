@@ -1,28 +1,36 @@
-.container{
+.container {
     max-width: 45vw;
     margin: 30px auto;
 }
 
-.mb3{
+.mb3 {
     margin-top: 21px;
     display: flex;
     flex-direction: column;
 }
 
-.formLabel{
+.formLabel {
     margin: 12px 14px 8px 0;
 }
 
-.formControl{
+.formControl {
     padding: 10px 5px;
     margin-bottom: 5px;
 }
 
-.h1{
+.h1 {
     margin: 5px 0 20px 0;
 }
 
-.btn{
+.btn {
     margin-top: 15px;
     padding: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        margin: 40px auto;
+        max-width: 90vw;
+    }
 }
