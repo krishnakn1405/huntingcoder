@@ -22,7 +22,7 @@ const About = () => {
 
       <h2 className={styles.h2}>Contact Us</h2>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis similique veritatis dolorem quas aut! Alias nesciunt labore, nostrum commodi est odio quo odit soluta laborum incidunt, minima atque dolorum ipsa?</p>
-      
+
     </div>
   );
 };
