@@ -4,7 +4,7 @@ import styles from "../../styles/BlogPost.module.css";
 
 // Step 1: Find the file corresponding to the slug
 // Step 2: Populate them inside the page
-const slug = (props) => {
+const Slug = (props) => {
   function createMarkup(c) {
     return {__html: c};
   }
@@ -34,4 +34,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default slug;
+export default Slug;
